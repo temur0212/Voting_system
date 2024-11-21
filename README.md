@@ -19,3 +19,21 @@ Ensure your system meets the [Laravel Server Requirements](https://laravel.com/d
 Run the following command to clone the repository into your desired directory:
 ```bash
 git clone https://github.com/temur0212/Voting_system.git [YourDirectoryName]
+```
+
+
+### ⚙️ Install PHP Dependencies
+
+Move into the project directory and install all required PHP dependencies:
+```bash
+cd YourDirectoryName
+composer install
+```
+
+### 🛠️ Configuration
+
+
+
+
+
+
