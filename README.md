@@ -25,10 +25,18 @@ Laravel utilizes [Composer](https://getcomposer.org/) to manage its dependencies
 
 ### Config file
 
-Rename or copy `.env.example` file to `.env` 1.`php artisan key:generate` to generate app key.
+ `cp .env.example .env`   create the `.env`  file using the command below
+`php artisan key:generate`  to generate app key.
 
-1. Set your database credentials in your `.env` file
-1. Set your `APP_URL` in your `.env` file.
+ Set your database credentials in your `.env` file
+    `DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=your_database_name
+    DB_USERNAME=your_database_user
+    DB_PASSWORD=your_database_password`
+
+
 
 ### Database
 
@@ -39,9 +47,7 @@ Rename or copy `.env.example` file to `.env` 1.`php artisan key:generate` to gen
 1. `npm install` to install node dependencies
 1. `npm run dev` for development or `npm run build` for production
 
-### Create storage link
 
-`php artisan storage:link`
 
 ### Run Server
 
