@@ -100,7 +100,21 @@ Open your browser and visit:
 ```arduino
 http://localhost:8000
 ```
+---
 
+### 📸 Screenshots
+
+### Questionnaires
+![Dashboard Screenshot](https://raw.githubusercontent.com/username/repo/main/public/screenshots/Sorovnomalar.png)
+
+Create a survey
+![Create page Screenshot](https://raw.githubusercontent.com/username/repo/main/public/screenshots/Sorovnoma_yaratish.png)
+
+Personal Surveys
+![Create page Screenshot](https://raw.githubusercontent.com/username/repo/main/public/screenshots/Mening_Sorovnomalarim.png)
+
+
+---
 
 ### ❤️ Contributions
 Feel free to contribute to this project. Fork, star, or submit a pull request to help us improve! 😊
