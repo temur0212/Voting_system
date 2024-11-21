@@ -105,13 +105,13 @@ http://localhost:8000
 ### 📸 Screenshots
 
 ### Questionnaires
-![Dashboard Screenshot](https://raw.githubusercontent.com/username/repo/main/public/Screenshots/Sorovnomalar.png)
+![Dashboard Screenshot](https://raw.githubusercontent.com/temur0212/Voting_system/main/public/Screenshots/Sorovnomalar.png)
 
-Create a survey
-![Create page Screenshot](https://raw.githubusercontent.com/username/repo/main/public/Screenshots/Sorovnoma_yaratish.png)
+### Create a survey
+![Create page Screenshot](https://raw.githubusercontent.com/temur0212/Voting_system/main/public/Screenshots/Sorovnoma_yaratish.png)
 
-Personal Surveys
-![Create page Screenshot](https://raw.githubusercontent.com/username/repo/main/public/Screenshots/Mening_Sorovnomalarim.png)
+### Personal Surveys
+![Create page Screenshot](https://raw.githubusercontent.com/temur0212/Voting_system/main/public/Screenshots/Mening_Sorovnomalarim.png)
 
 
 ---
