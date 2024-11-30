@@ -87,6 +87,14 @@ npm run build
 ```
 
 
+
+
+### Add information to the database
+
+```bash
+php artisan db:seed
+```
+
 ---
 
 
