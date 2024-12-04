@@ -24,6 +24,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PollSeeder::class,
             AnswerSeeder::class,
+            RoleAndPermissionSeeder::class,
         ]);
+
+        $user = User::find(1); 
+        $user->assignRole('admin'); 
     }
 }

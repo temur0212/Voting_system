@@ -17,12 +17,15 @@
                     <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
                         {{ __("So'rovnomalar") }}
                     </x-nav-link>
+                    @can('create poll')
                     <x-nav-link :href="route('polls.create')" :active="request()->routeIs('create')">
                         {{ __("So'rovnoma yaratish") }}
                     </x-nav-link>
+
                     <x-nav-link :href="route('polls_one')" :active="request()->routeIs('polls_one')">
                         {{ __("Mening So'rovnomalarim") }}
                     </x-nav-link>
+                    @endcan
                 
                 </div>
             </div>
