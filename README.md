@@ -86,6 +86,9 @@ For production builds:
 npm run build
 ```
 
+
+
+
 ### Add information to the database
 
 ```bash
