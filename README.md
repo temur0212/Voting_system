@@ -98,7 +98,7 @@ php artisan db:seed
 
 ### Admin user information for testing
 
-email: test@example.com
+email: test@example.com :
 password : test123
 
 
