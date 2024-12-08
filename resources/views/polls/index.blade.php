@@ -8,13 +8,13 @@
     <h2 class="text-center mb-4 text-primary">So'rovnomalar</h2>
 
     @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-alert">
             <i class="fas fa-check-circle"></i> {{ session('success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
     @if (session('error'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" id="success-alert">
             <i class="fas fa-exclamation-circle"></i> {{ session('error') }}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -22,9 +22,18 @@
         </div>
     @endif
 
-    <div class="row">
+    <div class="input-group mb-4">
+        <input type="text" id="search" class="form-control" placeholder="So'rovnoma nomini kiriting...">
+        <div class="input-group-append">
+            <span class="input-group-text bg-primary text-white">
+                <i class="fas fa-search"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="row" id="pollList">
         @foreach($polls as $poll)
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4 contact">
             <div class="card shadow-lg h-100 border-light rounded d-flex flex-column">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title font-weight-bold">{{ $poll->title }}</h5>
@@ -35,7 +44,6 @@
                     <p class="text-info mt-3">
                         <i class="fas fa-calendar-alt"></i> Oxirgi o'zgartirilgan vaqt: <strong>{{ $poll->updated_at->format('Y-m-d') }}</strong>
                     </p>
-                    <!-- Modalni ochish tugmasi -->
                     <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#voteModal{{ $poll->id }}">
                         <i class="fas fa-vote-yea"></i> Ovoz berish
                     </button>
@@ -79,8 +87,33 @@
     </div>
 </div>
 
-<!-- Bootstrap 5 uchun kerakli JS -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+
+<script>
+    document.getElementById('search').addEventListener('input', (event) => {
+        let searchQuery = event.target.value.toLowerCase();
+        document.querySelectorAll('.contact').forEach(item => {
+            let title = item.querySelector('.card-title').innerText.toLowerCase();
+            if (title.includes(searchQuery)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+    
+        setTimeout(() => {
+            const alert = document.getElementById('success-alert');
+            if (alert) {
+                alert.classList.remove('show'); 
+                alert.classList.add('fade');
+                setTimeout(() => alert.remove(), 150); 
+            }
+        }, 3000); // 3 seconds
+
+       
+    
+</script>
 
 @endsection

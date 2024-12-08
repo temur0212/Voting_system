@@ -25,6 +25,11 @@
                     <x-nav-link :href="route('polls_one')" :active="request()->routeIs('polls_one')">
                         {{ __("Mening So'rovnomalarim") }}
                     </x-nav-link>
+                        @can('all permission')
+                        <x-nav-link :href="route('admin.users')" :active="request()->routeIs('admin.users')">
+                            {{ __("Foydalanuvchilarni boshqarish") }}
+                        </x-nav-link>
+                        @endcan
                     @endcan
                 
                 </div>

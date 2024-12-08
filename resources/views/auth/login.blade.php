@@ -36,5 +36,14 @@
                 {{ __('Kirish') }}
             </x-primary-button>
         </div>
+        <div class="row mb-0">
+            <div class="col-md-8 offset-md-4">
+                <br/>
+                <a href="{{ route('auth.google') }}">
+                    <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png">
+                </a>
+            </div>
+        </div>
+
     </form>
 </x-guest-layout>
