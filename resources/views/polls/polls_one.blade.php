@@ -85,6 +85,7 @@
                     <div class="card-body">
                         <h5 class="card-title font-weight-bold">{{ $poll->title }}</h5>
                         <p class="card-text text-muted flex-grow-1">{{ Str::limit($poll->description, 100) }}</p>
+                        <p> <span>By :</span> {{ $poll->user->email }}</p>
 
                         @if ($poll->end_time > $localTime)
                             <p class="text-info mt-3">

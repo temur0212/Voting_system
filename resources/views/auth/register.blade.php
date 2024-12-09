@@ -48,13 +48,73 @@
                 {{ __("Ro'yxatdan o'tish") }}
             </x-primary-button>
         </div>
-        <div class="row mb-0">
-            <div class="col-md-8 offset-md-4">
-                <br/>
-                <a href="{{ route('auth.google') }}">
-                    <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png">
-                </a>
-            </div>
+        <br>
+        
+        <div class="container text-center my-5">
+    <div class="row justify-content-center">
+        <!-- Google Login Button -->
+        <div class="col-md-4 mb-3">
+            <a href="{{ route('auth.google') }}" 
+               class="btn btn-google btn-lg btn-block d-flex align-items-center justify-content-center">
+                <i class="fab fa-google mr-2"></i> Login with Google
+            </a>
+       
+            <a href="{{ route('auth.github') }}" 
+               class="btn btn-github btn-lg btn-block d-flex align-items-center justify-content-center">
+                <i class="fab fa-github mr-2"></i> Login with GitHub
+            </a>
         </div>
+    </div>
+</div>
+
+</form>
+
+<style>
+    /* Google Button Styles */
+    .btn-google {
+        background: linear-gradient(45deg, rgb(66, 133, 244), rgb(52, 168, 83));
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 10px;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 10px rgba(66, 133, 244, 0.4);
+        margin-right: 4px;
+        
+    }
+
+    .btn-google:hover {
+        background: linear-gradient(45deg, rgb(52, 168, 83), rgb(66, 133, 244));
+        box-shadow: 0 6px 15px rgba(66, 133, 244, 0.6);
+    }
+
+    /* GitHub Button Styles */
+    .btn-github {
+        background: linear-gradient(45deg, rgb(0, 0, 0), rgb(64, 64, 64));
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 10px;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        margin-left: 4px;
+    }
+
+    .btn-github:hover {
+        background: linear-gradient(45deg, rgb(64, 64, 64), rgb(0, 0, 0));
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+    }
+
+    /* General Button Styles */
+    .btn {
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .btn i {
+        font-size: 20px;
+    }
+</style>
     </form>
 </x-guest-layout>

@@ -6,6 +6,7 @@ use App\Http\Controllers\PollController;
 use App\Http\Controllers\VoteController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\GitHubController;
 
 Route::get('/', [PollController::class,'welcom']);
 
@@ -13,10 +14,15 @@ Route::get('/', [PollController::class,'welcom']);
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
+
+Route::get('auth/github', [GitHubController::class, 'redirectToGitHub'])->name('auth.github');
+Route::get('auth/github/callback', [GitHubController::class, 'handleGitHubCallback']);
+
 Route::middleware(['auth'])->group(function () {
     Route::resource('polls', PollController::class);
     Route::post('polls/{poll}/vote', [VoteController::class, 'vote'])->name('polls.vote');
     Route::get("/polls_one",[PollController::class,'polls_one'])->name('polls_one');
+    Route::get("/polls_all",[PollController::class,'polls_all'])->name('polls_all');
     Route::get("/index",[PollController::class,'index'])->name('index');
     Route::get('/update/{id}',[PollController::class,'update'])->name('update');
     Route::get('/polls/{id}/results', [PollController::class, 'getPollResults'])->name('polls.results');

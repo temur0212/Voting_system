@@ -28,7 +28,7 @@ class GoogleController extends Controller
     {
         try {
             $googleUser = Socialite::driver('google')->user();
-            $findUser = User::where('google_id', $googleUser->id)->orWhere('email', $googleUser->email)->first();
+            $findUser = User::Where('email', $googleUser->email)->first();
 
             if ($findUser) {
                 // If user exists, log them in
@@ -39,7 +39,7 @@ class GoogleController extends Controller
                     'name' => $googleUser->name,
                     'email' => $googleUser->email,
                     'google_id' => $googleUser->id,
-                    'password' => bcrypt('dummy-password'), // Dummy password
+                    'password' => bcrypt('RealMadrid'), // Dummy password
                 ]);
 
                 $newUser->assignRole('user');

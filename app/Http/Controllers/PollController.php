@@ -108,6 +108,11 @@ public function getPollResults($id)
         $polls = Poll::where('user_id',$user)->orderBy('created_at', 'desc')->get();
         return view('polls.polls_one', compact('polls'));
     }
+
+    public function polls_all(){
+        $polls = Poll::orderBy('created_at', 'desc')->get();
+        return view('polls.polls_one', compact('polls'));
+    }
     
     
     public function edit(Request $request, $id)

@@ -21,14 +21,18 @@
                     <x-nav-link :href="route('polls.create')" :active="request()->routeIs('create')">
                         {{ __("So'rovnoma yaratish") }}
                     </x-nav-link>
-
+                    @can('all permission')
+                    <x-nav-link :href="route('polls_all')" :active="request()->routeIs('polls_all')">
+                        {{ __("Barcha So'rovnomalar") }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin.users')" :active="request()->routeIs('admin.users')">
+                        {{ __("Foydalanuvchilarni boshqarish") }}
+                    </x-nav-link>
+                        @else
                     <x-nav-link :href="route('polls_one')" :active="request()->routeIs('polls_one')">
                         {{ __("Mening So'rovnomalarim") }}
                     </x-nav-link>
-                        @can('all permission')
-                        <x-nav-link :href="route('admin.users')" :active="request()->routeIs('admin.users')">
-                            {{ __("Foydalanuvchilarni boshqarish") }}
-                        </x-nav-link>
+                        
                         @endcan
                     @endcan
                 
@@ -85,16 +89,32 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('index')" :active="request()->routeIs('index')">
-                {{ __('Masalalar') }}
+                {{ __("So'rovnomalar") }}
             </x-responsive-nav-link>
+            @can('create poll')
+            <x-responsive-nav-link :href="route('polls.create')" :active="request()->routeIs('create')">
+                {{ __("So'rovnoma yaratish") }}
+            </x-responsive-nav-link>
+
+                @can('all permission')
+                <x-responsive-nav-link :href="route('polls_all')" :active="request()->routeIs('polls_all')">
+                {{ __("Barcha So'rovnomalar") }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('admin.users')" :active="request()->routeIs('admin.users')">
+                    {{ __("Foydalanuvchilarni boshqarish") }}
+                </x-responsive-nav-link>
+                @else
+                <x-responsive-nav-link :href="route('polls_one')" :active="request()->routeIs('polls_one')">
+                {{ __("Mening So'rovnomalarim") }}
+                </x-responsive-nav-link>
+            
+                @endcan
+            @endcan
         </div>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-            </div>
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
