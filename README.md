@@ -58,6 +58,13 @@ DB_USERNAME=your_database_user
 DB_PASSWORD=your_database_password
 ```
 
+4. Write them in the .env file to configure signing in with Google:
+```bash
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+GOOGLE_REDIRECT_URI=http://your-app-url/login/google/callback
+```
+
 
 ---
 
